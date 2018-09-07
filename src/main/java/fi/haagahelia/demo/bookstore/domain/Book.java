@@ -9,7 +9,7 @@ import javax.persistence.Id;
 public class Book {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	public long id;
+	private long id;
 	private String title, author, isbn;
 	private int year;
 	private double price;
@@ -55,6 +55,14 @@ public class Book {
 	}
 	public void setPrice(double price) {
 		this.price = price;
+	}
+
+	public long getId() {
+		return id;
+	}
+
+	public void setId(long id) {
+		this.id = id;
 	}
 
 }
