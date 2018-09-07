@@ -1,4 +1,4 @@
-package fi.haagahelia.demo.Bookstore.web;
+package fi.haagahelia.demo.bookstore.web;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;

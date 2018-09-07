@@ -1,4 +1,4 @@
-package fi.haagahelia.demo.Bookstore.domain;
+package fi.haagahelia.demo.bookstore.domain;
 
 public class Book {
 	private String title, author, isbn;
