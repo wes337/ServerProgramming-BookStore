@@ -1,4 +1,4 @@
-package fi.haagahelia.demo.Bookstore;
+package fi.haagahelia.demo.bookstore;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
