@@ -22,7 +22,9 @@ public class BookstoreApplication {
 	public CommandLineRunner demo(BookRepository repository, CategoryRepository crepository) {
 		return (args) -> {
 			crepository.save(new Category("Fantasy"));
-			crepository.save(new Category("History"));
+			crepository.save(new Category("Fiction"));
+			crepository.save(new Category("Science Fiction"));
+			crepository.save(new Category("Historical Fiction"));
 			
 			Book b1 = new Book("The Witch", "Camilla Lackberg", "38949029-3", 2017, 10, crepository.findByName("Fantasy").get(0));
 			repository.save(b1);
