@@ -7,27 +7,30 @@
     </head>
     <body>
     	<div class="container p-5 mt-5 mx-auto">
-    	<h1 class="text-center">Book Store</h1>
-        <div th:if="${param.error}">
-    		<div class="alert alert-danger" role="alert">
-				Invalid username or password.
-			</div>
-	    </div>
-	    <div th:if="${param.logout}">
-	    	<div class="alert alert-primary" role="alert">
-	    		You have been logged out. 
-    		</div>
-	    </div>
-    	<form class="border rounded bg-light p-5" th:action="@{/login}" method="post">
-    	  <div class="form-group">
-    	    <label for="inputUserName">Username</label>
-    	    <input type="text" name="username" class="form-control" id="inputUserName"
-    	      placeholder="Enter username"/>
-    	    <label for="inputPassword">Password</label>
-    	    <input type="password" name="password" class="form-control" id="inputPassword"/>
-    	  </div>
-    	  <button type="submit" class="btn btn-primary">Sign In</button>
-    	</form>
+	    	<h1 class="display-4 text-center">Wesley's Book Store</h1>
+	        <div th:if="${param.error}">
+	    		<div class="alert alert-danger" role="alert">
+					Invalid username or password.
+				</div>
+		    </div>
+		    <div th:if="${param.logout}">
+		    	<div class="alert alert-primary" role="alert">
+		    		You have been logged out. 
+	    		</div>
+		    </div>
+	    	<form class="border rounded bg-light p-5" th:action="@{/login}" method="post">
+	    	  <div class="form-group">
+	    	    <label for="inputUserName">Username</label>
+	    	    <input type="text" name="username" class="form-control" id="inputUserName"
+	    	      placeholder="Enter username"/>
+	    	    <label for="inputPassword">Password</label>
+	    	    <input type="password" name="password" class="form-control" id="inputPassword"/>
+	    	  </div>
+	    	  <button type="submit" class="btn btn-primary">Sign In</button>
+	    	</form>
+	    	<div class="m-3 text-center">
+	    	<a th:href="@{/signup}"><button class="btn btn-outline-primary">Sign Up</button></a>
+	    	</div>
     	</div>
     </body>
 </html>

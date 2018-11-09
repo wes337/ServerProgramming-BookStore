@@ -5,7 +5,8 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 
-
+import fi.haagahelia.demo.bookstore.domain.UserRepository;
+import fi.haagahelia.demo.bookstore.domain.User;
 import fi.haagahelia.demo.bookstore.domain.Book;
 import fi.haagahelia.demo.bookstore.domain.BookRepository;
 import fi.haagahelia.demo.bookstore.domain.Category;
@@ -19,7 +20,7 @@ public class BookstoreApplication {
 	}
 	
 	@Bean
-	public CommandLineRunner demo(BookRepository repository, CategoryRepository crepository) {
+	public CommandLineRunner demo(BookRepository repository, CategoryRepository crepository, UserRepository urepository) {
 		return (args) -> {
 			crepository.save(new Category("Fantasy"));
 			crepository.save(new Category("Fiction"));
@@ -36,6 +37,12 @@ public class BookstoreApplication {
 			repository.save(b4);
 			Book b5 = new Book("The Dark Tower: The Gunslinger", "Stephen King", "9150116180-3", 1982, 10, crepository.findByName("Fantasy").get(0));
 			repository.save(b5);
+			
+			// Create users: admin/admin user/user
+			User user1 = new User("user", "$2a$06$3jYRJrg0ghaaypjZ/.g4SethoeA51ph3UD4kZi9oPkeMTpjKU5uo6", "USER");
+			User user2 = new User("admin", "$2a$10$0MMwY.IQqpsVc1jC8u7IJ.2rT8b0Cd3b3sfIBGV2zfgnPGtT4r0.C", "ADMIN");
+			urepository.save(user1);
+			urepository.save(user2);
 		};
 	}
 }

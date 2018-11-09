@@ -27,9 +27,10 @@ public class BookController {
         return "login";
     }
 	
-	@RequestMapping(value="/index")
+	@RequestMapping(value="/")
 	public String Bookstore(Model model) {
-		return "index";
+		model.addAttribute("books", repository.findAll());
+		return "booklist";
 	}
 	
 	@RequestMapping(value="/booklist")

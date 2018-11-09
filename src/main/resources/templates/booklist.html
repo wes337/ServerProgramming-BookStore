@@ -22,8 +22,8 @@
 			<th>ISBN</th>
 			<th>Price</th>
 			<th>Category</th>
-			<th sec:authorize="hasRole('ADMIN')"></th>
-			<th sec:authorize="hasRole('ADMIN')"></th>
+			<th sec:authorize="hasAuthority('ADMIN')"></th>
+			<th sec:authorize="hasAuthority('ADMIN')"></th>
 		</tr>
 			<tr th:each= "book : ${books}">
 				<td th:text="${book.title}"></td>
@@ -32,8 +32,8 @@
 				<td th:text="${book.isbn}"></td>
 				<td th:text="${book.price}"></td>
 				<td th:text="${book.category.name}"></td>
-				<td sec:authorize="hasRole('ADMIN')"><a class="btn btn-danger" th:href="@{/delete/{id}(id=${book.id})}">Delete</a></td>
-				<td sec:authorize="hasRole('ADMIN')"><a class="btn btn-secondary" th:href="@{/edit/{id}(id=${book.id})}">Edit</a></td>
+				<td sec:authorize="hasAuthority('ADMIN')"><a class="btn btn-danger" th:href="@{/delete/{id}(id=${book.id})}">Delete</a></td>
+				<td sec:authorize="hasAuthority('ADMIN')"><a class="btn btn-secondary" th:href="@{/edit/{id}(id=${book.id})}">Edit</a></td>
 			</tr>
 	</table>
 	<a href="/add" class="btn btn-success">Add Book</a>
